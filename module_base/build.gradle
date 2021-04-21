@@ -1,0 +1,78 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion Versions.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion Versions.minSdkVersion
+        targetSdkVersion Versions.targetSdkVersion
+        versionCode Versions.versionCode
+        versionName Versions.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    api Libs.constraint
+
+    api Libs.gson
+    //EventBus
+    api Libs.eventbus
+    //ARouter
+    api Libs.arouter
+    //OKHttp
+    api Libs.okhttp
+    api Libs.okio
+    api Libs.okhttp_interceptor
+    api Libs.okhttp3
+    //RxJava
+    api Libs.rxjava
+    api Libs.rxandroid
+    //Butterknife
+    api Libs.butterknife
+    // liveData
+    api Libs.livedata
+    // viewModel
+    api Libs.viewmodel
+    api Libs.extensions
+
+    api Libs.easypermissions
+
+    api Libs.viewpager2
+
+    api Libs.SmartRefreshHeader
+    api Libs.SmartRefreshLayout
+
+    api Libs.glide
+    api Libs.glide_transformations
+    api Libs.material
+    api Libs.xlog
+//    kapt Libs.room_compiler
+//    api Libs.room_runtime
+    api Libs.navigation_fragment
+    api Libs.navigation_ui
+//    kapt Libs.life_compiler
+    api Libs.work_runtime
+    api Libs.picasso
+    api Libs.recyclerview
+    api Libs.retrofit
+    api Libs.converter
+    api Libs.paging
+
+    api Libs.coroutines_core
+    api Libs.coroutines_android
+    api Libs.kotlin_stdlib
+//    api Libs.databinding
+}

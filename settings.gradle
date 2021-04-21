@@ -1,0 +1,3 @@
+include ':module_home'
+include ':module_base',':module_network',':module_common',':app'
+rootProject.name = "Component"
