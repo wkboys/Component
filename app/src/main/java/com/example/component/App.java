@@ -2,7 +2,7 @@ package com.example.component;
 
 
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.example.base.BaseApplication;
+import com.example.base.base.BaseApplication;
 
 
 

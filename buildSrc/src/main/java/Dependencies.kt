@@ -57,6 +57,7 @@
         val paging="2.1.0"
         val coroutines_core="1.4.2"
         val coroutines_android="1.4.2"
+        val PersistentCookieJar="v1.0.1"
     }
 
 
@@ -122,7 +123,6 @@
         val navigation_ui="androidx.navigation:navigation-ui-ktx:${Versions.navigation}"
 
         val kotlin_stdlib="org.jetbrains.kotlin:kotlin-stdlib-jdk8:${Versions.kotlin_stdlib}"
-        val databinding=  "com.android.databinding:compiler:${Versions.databinding}"
         val work_runtime ="androidx.work:work-runtime:${Versions.work_runtime}"
         val picasso="com.squareup.picasso:picasso:${Versions.picasso}"
         val recyclerview="androidx.recyclerview:recyclerview:${Versions.recyclerview}"
@@ -133,5 +133,9 @@
 
         val coroutines_core="org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines_core}"
         val coroutines_android="org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines_android}"
+
+        val databinding=  "com.android.databinding:compiler:${Versions.databinding}"
+        //cookie持久化
+        val PersistentCookieJar= "com.github.franmontiel:PersistentCookieJar:${Versions.PersistentCookieJar}"
     }
 

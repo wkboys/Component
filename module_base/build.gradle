@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion Versions.compileSdkVersion
@@ -13,6 +14,11 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
+
+        kotlinOptions {
+            jvmTarget = "1.8"
+        }
+
     }
 
     buildTypes {
@@ -21,7 +27,21 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    dataBinding {
+        enabled = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
+
+kapt {
+    generateStubs = true
+}
+
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
@@ -74,5 +94,6 @@ dependencies {
     api Libs.coroutines_core
     api Libs.coroutines_android
     api Libs.kotlin_stdlib
-//    api Libs.databinding
+    kapt Libs.databinding
+    api Libs.PersistentCookieJar
 }
